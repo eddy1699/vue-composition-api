@@ -5,6 +5,10 @@
     <h3>{{ hulk }}</h3>
     <button @click="changeIronman">Cambiar Ironman</button>
     <button  @click="changeHulk">Cambiar Hulk</button>
+
+    <h3>{{ ironmanIsAlive }}</h3>
+    <h3>{{ hulkIsAlive }}</h3>
+    <button @click="changeStatus">Cambiar Status</button>
   </div>
 </template>
 
@@ -18,9 +22,21 @@ export default {
   setup() {
     const ironman = ref({ name: "Tony", age: 50 });
     const hulk = reactive({ name: "Bruce", age: 50 });
+
+    const ironmanIsAlive=reactive(false)
+    const hulkIsAlive =ref(true)
+
+    const changeStatus = ()=>{
+      hulkIsAlive.value=!hulkIsAlive.value
+      ironmanIsAlive = reactive(!ironmanIsAlive)
+    }
+
     return {
       ironman,
       hulk,
+      ironmanIsAlive,
+      hulkIsAlive,
+      changeStatus,
       changeIronman: () => {
         (ironman.value.name = "Tony Stark"), (ironman.value.age = 55);
       },
