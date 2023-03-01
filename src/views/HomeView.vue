@@ -6,8 +6,8 @@
     <button @click="changeIronman">Cambiar Ironman</button>
     <button  @click="changeHulk">Cambiar Hulk</button>
 
-    <h3>{{ ironmanIsAlive }}</h3>
-    <h3>{{ hulkIsAlive }}</h3>
+    <h3>Ironman: {{ ironmanIsAlive }}</h3>
+    <h3>Hulk: {{ hulkIsAlive }}</h3>
     <button @click="changeStatus">Cambiar Status</button>
   </div>
 </template>
